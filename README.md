@@ -161,7 +161,7 @@ After Terraform finishes applying the changes to AWS, you should see an output s
 
 ![Terraform Apply Output](./assets/terraform-apply-output.png)
 
-The value of `alb_dns_name` shown in the output is the address you will use to access the API (e.g., `<alb_dns_name>/todos`).
+The value of `alb_dns_name` shown in the output is the address you will use to access the API (e.g., `http://<alb_dns_name>/todos`).
 
 ---
 
