@@ -1,0 +1,39 @@
+{
+  "name": "todo-api-nodejs-postgresql-terraform-aws",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "postgresql",
+    "docker",
+    "aws",
+    "terraform",
+    "todo",
+    "api"
+  ],
+  "author": "Andre Drumond",
+  "license": "MIT",
+  "description": "A simple TODO API project demonstrating modern Infrastructure as Code (IaC) using Terraform, Node.js, Express, PostgreSQL, Docker, and AWS.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andredrumond/nodejs-postgresql-terraform-aws.git"
+  },
+  "dependencies": {
+    "express": "5.1.0",
+    "pg": "8.16.3",
+    "reflect-metadata": "0.2.2",
+    "typeorm": "0.3.25"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.3",
+    "@types/node": "24.0.15",
+    "ts-node-dev": "2.0.0",
+    "typescript": "5.8.3"
+  }
+}
