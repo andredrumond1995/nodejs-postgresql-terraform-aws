@@ -115,52 +115,7 @@ The production environment is fully managed by Terraform and includes:
 
 ### High-level Architecture
 
-```svg
-<svg width="600" height="340" xmlns="http://www.w3.org/2000/svg">
-  <rect x="10" y="10" width="580" height="320" rx="20" fill="#f8f8f8" stroke="#bbb"/>
-  <rect x="40" y="40" width="520" height="260" rx="12" fill="#e3f2fd" stroke="#90caf9"/>
-  <text x="300" y="65" font-size="18" text-anchor="middle" font-family="Arial">VPC (Private Network)</text>
-
-  <!-- ALB -->
-  <rect x="80" y="100" width="120" height="50" rx="8" fill="#fffde7" stroke="#fbc02d"/>
-  <text x="140" y="130" font-size="14" text-anchor="middle" font-family="Arial">ALB (Public)</text>
-  <text x="140" y="145" font-size="10" text-anchor="middle" font-family="Arial">SG: 80 from 0.0.0.0/0</text>
-
-  <!-- ECS -->
-  <rect x="250" y="100" width="120" height="50" rx="8" fill="#e8f5e9" stroke="#43a047"/>
-  <text x="310" y="130" font-size="14" text-anchor="middle" font-family="Arial">ECS (Fargate)</text>
-  <text x="310" y="145" font-size="10" text-anchor="middle" font-family="Arial">SG: 3000 from ALB SG</text>
-
-  <!-- RDS -->
-  <rect x="420" y="100" width="120" height="50" rx="8" fill="#e3eafc" stroke="#3949ab"/>
-  <text x="480" y="130" font-size="14" text-anchor="middle" font-family="Arial">RDS (Postgres)</text>
-  <text x="480" y="145" font-size="10" text-anchor="middle" font-family="Arial">SG: 5432 from ECS SG</text>
-
-  <!-- NAT Gateway -->
-  <rect x="250" y="200" width="120" height="40" rx="8" fill="#fff3e0" stroke="#fb8c00"/>
-  <text x="310" y="225" font-size="13" text-anchor="middle" font-family="Arial">NAT Gateway</text>
-
-  <!-- Arrows -->
-  <line x1="200" y1="125" x2="250" y2="125" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="370" y1="125" x2="420" y2="125" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="310" y1="150" x2="310" y2="200" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="140" y1="100" x2="140" y2="40" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="480" y1="100" x2="480" y2="40" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
-
-  <!-- Arrowhead definition -->
-  <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L10,5 L0,10" fill="#888" />
-    </marker>
-  </defs>
-
-  <!-- Labels -->
-  <text x="140" y="90" font-size="11" text-anchor="middle" font-family="Arial">HTTP:80</text>
-  <text x="310" y="90" font-size="11" text-anchor="middle" font-family="Arial">3000</text>
-  <text x="480" y="90" font-size="11" text-anchor="middle" font-family="Arial">5432</text>
-  <text x="330" y="190" font-size="10" text-anchor="start" font-family="Arial">ECS outbound to internet</text>
-</svg>
-```
+![Architecture Diagram](./assets/aws-arch.png)
 
 ---
 
