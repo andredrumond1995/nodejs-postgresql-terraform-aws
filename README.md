@@ -147,6 +147,22 @@ terraform plan -out=api-plan.tfplan
 terraform apply api-plan.tfplan
 ```
 
+To delete all infrastructure defined and deployed on AWS, run:
+
+```sh
+terraform destroy -auto-approve
+```
+
+---
+
+## Example Terraform Apply Output
+
+After Terraform finishes applying the changes to AWS, you should see an output similar to the following:
+
+![Terraform Apply Output](./assets/terraform-apply-output.png)
+
+The value of `alb_dns_name` shown in the output is the address you will use to access the API (e.g., `<alb_dns_name>/todos`).
+
 ---
 
 ## License

@@ -13,10 +13,13 @@ function getDBConfig() {
     synchronize: true,
     logging: false,
     entities: [Todo],
+    ssl: { rejectUnauthorized: false }
   };
 
   if (process.env.NODE_ENV === 'production') {
-    return { ...config, synchronize: false, ssl: { rejectUnauthorized: false } };
+    return { ...config, synchronize: false,  };
+  } else if (process.env.NODE_ENV === 'local') {
+    return { ...config, ssl: undefined };
   }
 
   return config;
