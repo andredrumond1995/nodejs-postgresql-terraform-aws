@@ -9,3 +9,4 @@ terraform.tfstate
 terraform.tfstate.backup
 node_modules/
 .env
+package-lock.json
