@@ -9,6 +9,8 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+app.options('*', cors());
+
 AppDataSource.initialize().then(() => {
   // GET /todos - returns all TODOs from the database
   app.get('/todos', async (req, res) => {
